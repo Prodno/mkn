@@ -1,0 +1,20 @@
+namespace fbs_scheme;
+
+struct FBEdge {
+    from: int;
+    to: int;
+    cost: float;
+    accessible: bool;
+}
+
+table FBVertex {
+    id: int (key);
+    name: string;
+    outgoing_edges: [FBEdge];
+}
+
+table FBGraph {
+    vertices: [FBVertex];
+}
+
+root_type FBGraph;
